@@ -23,14 +23,41 @@ const EARLY_SECTIONS = [
   },
 ]
 
+const COMPETITORS = [
+  {
+    name: 'Emirates NBD',
+    category: 'Traditional UAE Banking',
+    strengths: ['Clean, minimal interface', 'Reliable core banking'],
+    gaps: ['Limited transfer transparency', 'No spending insights'],
+  },
+  {
+    name: 'ADCB',
+    category: 'Full-Service Banking',
+    strengths: ['Good expense categorization', 'Comprehensive features'],
+    gaps: ['Overwhelming UI', 'Poor information hierarchy'],
+  },
+  {
+    name: 'Wise / Revolut',
+    category: 'Global Fintech',
+    strengths: ['Best-in-class transfer UX', 'Transparent pricing'],
+    gaps: ['Not UAE-banking integrated', 'Limited local features'],
+  },
+  {
+    name: 'Mashreq',
+    category: 'Digital Banking',
+    strengths: ['Strong traditional banking', 'Good security features'],
+    gaps: ['Weak financial wellness tools', 'Outdated interface'],
+  },
+]
+
 const LATE_SECTIONS = [
   {
-    tag: '06 — Design System',
+    tag: '07 — Design System',
     title: 'Financial-grade components, Arabic-aware',
     body: `We built a 150+ component system supporting both LTR and RTL layouts from day one — not as an afterthought. Every number format, date pattern, and currency display was tested against Central Bank of UAE guidelines.\n\nColour semantics were redefined for financial context: green only signals success, amber surfaces warnings, red is reserved for errors — never decoration.`,
   },
   {
-    tag: '07 — Key Flows',
+    tag: '08 — Key Flows',
     title: 'Transparent transfers & AI spending insights',
     body: `The transfer flow was collapsed from 7 screens to 4, with the total cost (fee + FX margin) visible on the first screen. A live rate ticker gave users confidence without requiring them to switch apps.\n\nThe AI insights module surfaced one actionable observation per week — not a dashboard of charts, but a single sentence like "You spent 40% more on dining this month vs. your 3-month average." Engagement hit 40%+ within 60 days of launch.`,
   },
@@ -195,10 +222,71 @@ export default function CaseStudyRaqam() {
           ))}
 
           {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-              03 — PERSONA
+              03 — COMPETITOR ANALYSIS
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
           <div style={ROW}>
-            <div><span style={SL}>03 — Persona</span></div>
+            <div><span style={SL}>03 — Competitor Analysis</span></div>
+            <div>
+              <h2 style={SH}>What the market got right — and left open</h2>
+              <p style={{ fontSize: '.88rem', lineHeight: 1.8, color: 'var(--muted)', marginBottom: 32 }}>
+                Audited 4 banking products used by UAE expats. Every competitor addressed part of the problem — none addressed all of it.
+              </p>
+
+              {/* 2×2 card grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 2, background: 'var(--bdr2)', marginBottom: 2 }}>
+                {COMPETITORS.map(({ name, category, strengths, gaps }) => (
+                  <div key={name} style={{ background: 'var(--s2)', display: 'flex', flexDirection: 'column' }}>
+
+                    {/* Card header */}
+                    <div style={{ padding: '22px 24px', borderBottom: '1px solid var(--bdr2)' }}>
+                      <div style={{ fontSize: '.55rem', fontWeight: 500, letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 8 }}>{category}</div>
+                      <div style={{ fontFamily: '"Cormorant Garamond",Georgia,serif', fontSize: '1.4rem', fontWeight: 400, color: 'var(--white)', lineHeight: 1 }}>{name}</div>
+                    </div>
+
+                    {/* Strengths */}
+                    <div style={{ padding: '16px 24px', borderBottom: '1px solid var(--bdr2)', flex: 1 }}>
+                      <div style={{ fontSize: '.55rem', fontWeight: 500, letterSpacing: '.18em', textTransform: 'uppercase', color: '#4ade80', marginBottom: 10 }}>What works</div>
+                      {strengths.map(s => (
+                        <div key={s} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 7 }}>
+                          <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', flexShrink: 0, marginTop: 5, display: 'inline-block' }} />
+                          <span style={{ fontSize: '.78rem', color: 'var(--muted)', lineHeight: 1.6 }}>{s}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Gaps */}
+                    <div style={{ padding: '16px 24px', flex: 1 }}>
+                      <div style={{ fontSize: '.55rem', fontWeight: 500, letterSpacing: '.18em', textTransform: 'uppercase', color: '#f87171', marginBottom: 10 }}>Gaps found</div>
+                      {gaps.map(g => (
+                        <div key={g} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 7 }}>
+                          <span style={{ color: '#f87171', flexShrink: 0, fontSize: '.75rem', lineHeight: 1, marginTop: 3 }}>✕</span>
+                          <span style={{ fontSize: '.78rem', color: 'var(--muted)', lineHeight: 1.6 }}>{g}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+
+              {/* Raqam opportunity callout */}
+              <div style={{ background: 'linear-gradient(135deg,rgba(201,168,76,.05) 0%,var(--s2) 100%)', border: '1px solid var(--border)', padding: '24px 28px', display: 'flex', gap: 20, alignItems: 'flex-start' }}>
+                <div style={{ width: 2, background: 'var(--gold)', alignSelf: 'stretch', flexShrink: 0 }} />
+                <div>
+                  <div style={{ fontSize: '.58rem', fontWeight: 500, letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>Raqam's opportunity</div>
+                  <div style={{ fontSize: '.88rem', color: 'var(--white)', lineHeight: 1.75 }}>
+                    No product combined transparent pricing (Wise's strength), UAE banking integration, and proactive spending intelligence in one experience. Raqam's brief was to close all three gaps simultaneously.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+              04 — PERSONA
+          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+          <div style={ROW}>
+            <div><span style={SL}>04 — Persona</span></div>
             <div>
               <h2 style={SH}>Designing for Omar — the mobile-first expat</h2>
               <p style={{ fontSize: '.88rem', lineHeight: 1.8, color: 'var(--muted)', marginBottom: 32 }}>
@@ -274,10 +362,10 @@ export default function CaseStudyRaqam() {
           </div>
 
           {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-              04 — USER JOURNEY MAP
+              05 — USER JOURNEY MAP
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
           <div style={ROW}>
-            <div><span style={SL}>04 — Journey Map</span></div>
+            <div><span style={SL}>05 — Journey Map</span></div>
             <div>
               <h2 style={SH}>From transfer anxiety to earned trust</h2>
               <p style={{ fontSize: '.88rem', lineHeight: 1.8, color: 'var(--muted)', marginBottom: 32 }}>
@@ -354,10 +442,10 @@ export default function CaseStudyRaqam() {
           </div>
 
           {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-              05 — INFORMATION ARCHITECTURE
+              06 — INFORMATION ARCHITECTURE
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
           <div style={ROW}>
-            <div><span style={SL}>05 — Information Architecture</span></div>
+            <div><span style={SL}>06 — Information Architecture</span></div>
             <div>
               <h2 style={SH}>Flat, task-first navigation</h2>
               <p style={{ fontSize: '.88rem', lineHeight: 1.8, color: 'var(--muted)', marginBottom: 32 }}>
@@ -416,9 +504,9 @@ export default function CaseStudyRaqam() {
             </div>
           ))}
 
-          {/* 08 — SCREENS */}
+          {/* 09 — SCREENS */}
           <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 64, alignItems: 'start', marginBottom: 96, paddingBottom: 96, borderBottom: '1px solid var(--bdr2)' }}>
-            <span style={SL}>08 — Screens</span>
+            <span style={SL}>09 — Screens</span>
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
                 {[
@@ -437,9 +525,9 @@ export default function CaseStudyRaqam() {
             </div>
           </div>
 
-          {/* 09 — LEARNINGS */}
+          {/* 10 — LEARNINGS */}
           <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 64, alignItems: 'start' }}>
-            <span style={SL}>09 — Learnings</span>
+            <span style={SL}>10 — Learnings</span>
             <div>
               <h2 style={SH}>What shipped, what we would change</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
