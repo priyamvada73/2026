@@ -52,12 +52,12 @@ const COMPETITORS = [
 
 const LATE_SECTIONS = [
   {
-    tag: '07 — Design System',
+    tag: '08 — Design System',
     title: 'Financial-grade components, Arabic-aware',
     body: `We built a 150+ component system supporting both LTR and RTL layouts from day one — not as an afterthought. Every number format, date pattern, and currency display was tested against Central Bank of UAE guidelines.\n\nColour semantics were redefined for financial context: green only signals success, amber surfaces warnings, red is reserved for errors — never decoration.`,
   },
   {
-    tag: '08 — Key Flows',
+    tag: '09 — Key Flows',
     title: 'Transparent transfers & AI spending insights',
     body: `The transfer flow was collapsed from 7 screens to 4, with the total cost (fee + FX margin) visible on the first screen. A live rate ticker gave users confidence without requiring them to switch apps.\n\nThe AI insights module surfaced one actionable observation per week — not a dashboard of charts, but a single sentence like "You spent 40% more on dining this month vs. your 3-month average." Engagement hit 40%+ within 60 days of launch.`,
   },
@@ -491,7 +491,90 @@ export default function CaseStudyRaqam() {
             </div>
           </div>
 
-          {/* 06 DESIGN SYSTEM · 07 KEY FLOWS */}
+          {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+              07 — WIREFRAMES
+          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+          <div style={ROW}>
+            <div><span style={SL}>07 — Wireframes</span></div>
+            <div>
+              <h2 style={SH}>Low-fidelity flows before pixels</h2>
+              <p style={{ fontSize: '.88rem', lineHeight: 1.8, color: 'var(--muted)', marginBottom: 48 }}>
+                Two critical paths mapped as lo-fi wireframes before any visual design. The 5-step transfer flow and the AI insights surface drove the most iteration — each screen refined through 3+ rounds of user testing.
+              </p>
+
+              {/* ── Transfer Flow ── */}
+              <div style={{ marginBottom: 52 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24, paddingBottom: 14, borderBottom: '1px solid var(--bdr2)' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block', flexShrink: 0 }} />
+                  <span style={{ fontSize: '.62rem', fontWeight: 500, letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)' }}>Transfer Flow</span>
+                  <span style={{ fontSize: '.62rem', color: 'var(--muted)', letterSpacing: '.08em' }}>5 screens · Dashboard → Recipient → Amount → Review → Success</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 0 }}>
+                  {[
+                    { img: 'wf-transfer-1-dashboard',  label: 'Dashboard' },
+                    { img: 'wf-transfer-2-recipient',  label: 'Select Recipient' },
+                    { img: 'wf-transfer-3-amount',     label: 'Enter Amount' },
+                    { img: 'wf-transfer-4-review',     label: 'Review' },
+                    { img: 'wf-transfer-5-success',    label: 'Success' },
+                  ].map(({ img, label }, i, arr) => (
+                    <React.Fragment key={img}>
+                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, minWidth: 0 }}>
+                        <div style={{ width: '100%', aspectRatio: '9/19', background: 'var(--s3)', border: '1px solid var(--bdr2)', borderRadius: 10, overflow: 'hidden' }}>
+                          <img
+                            src={`${import.meta.env.BASE_URL}images/wireframes/${img}.png`}
+                            alt={label}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                          />
+                        </div>
+                        <span style={{ fontSize: '.58rem', letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.4 }}>{label}</span>
+                      </div>
+                      {i < arr.length - 1 && (
+                        <div style={{ display: 'flex', alignItems: 'center', paddingBottom: 28, flexShrink: 0, padding: '0 4px', paddingTop: '20%' }}>
+                          <span style={{ color: 'rgba(201,168,76,.35)', fontSize: '.85rem' }}>›</span>
+                        </div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Smart Insights Flow ── */}
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24, paddingBottom: 14, borderBottom: '1px solid var(--bdr2)' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block', flexShrink: 0 }} />
+                  <span style={{ fontSize: '.62rem', fontWeight: 500, letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)' }}>Smart Insights Flow</span>
+                  <span style={{ fontSize: '.62rem', color: 'var(--muted)', letterSpacing: '.08em' }}>3 screens · Overview → Category → AI Recommendation</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 0, maxWidth: '62%' }}>
+                  {[
+                    { img: 'wf-insights-1-overview',  label: 'Insights Overview' },
+                    { img: 'wf-insights-2-category',  label: 'Category Details' },
+                    { img: 'wf-insights-3-ai',        label: 'AI Recommendation' },
+                  ].map(({ img, label }, i, arr) => (
+                    <React.Fragment key={img}>
+                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, minWidth: 0 }}>
+                        <div style={{ width: '100%', aspectRatio: '9/19', background: 'var(--s3)', border: '1px solid var(--bdr2)', borderRadius: 10, overflow: 'hidden' }}>
+                          <img
+                            src={`${import.meta.env.BASE_URL}images/wireframes/${img}.png`}
+                            alt={label}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                          />
+                        </div>
+                        <span style={{ fontSize: '.58rem', letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.4 }}>{label}</span>
+                      </div>
+                      {i < arr.length - 1 && (
+                        <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0, padding: '0 4px', paddingTop: '20%' }}>
+                          <span style={{ color: 'rgba(201,168,76,.35)', fontSize: '.85rem' }}>›</span>
+                        </div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 08 DESIGN SYSTEM · 09 KEY FLOWS */}
           {LATE_SECTIONS.map(({ tag, title, body }) => (
             <div key={tag} style={ROW}>
               <div><span style={SL}>{tag}</span></div>
@@ -504,9 +587,9 @@ export default function CaseStudyRaqam() {
             </div>
           ))}
 
-          {/* 09 — SCREENS */}
+          {/* 10 — SCREENS */}
           <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 64, alignItems: 'start', marginBottom: 96, paddingBottom: 96, borderBottom: '1px solid var(--bdr2)' }}>
-            <span style={SL}>09 — Screens</span>
+            <span style={SL}>10 — Screens</span>
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
                 {[
@@ -525,9 +608,9 @@ export default function CaseStudyRaqam() {
             </div>
           </div>
 
-          {/* 10 — LEARNINGS */}
+          {/* 11 — LEARNINGS */}
           <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 64, alignItems: 'start' }}>
-            <span style={SL}>10 — Learnings</span>
+            <span style={SL}>11 — Learnings</span>
             <div>
               <h2 style={SH}>What shipped, what we would change</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
