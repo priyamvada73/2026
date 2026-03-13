@@ -53,7 +53,7 @@ body.hov #ring { width:52px;height:52px;border-color:var(--gold); }
 .bento {
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  grid-template-rows:440px 320px 280px 300px 170px;
+  grid-template-rows:440px 320px 280px 300px 170px 280px;
   gap:var(--gap);
   margin-bottom:100px;
 }
@@ -68,6 +68,7 @@ body.hov #ring { width:52px;height:52px;border-color:var(--gold); }
 .b-ent    { grid-column:1/8;   grid-row:4/5; }
 .b-creds  { grid-column:8/13;  grid-row:4/5; }
 .b-ds     { grid-column:1/13;  grid-row:5/6; }
+.b-pet    { grid-column:1/13;  grid-row:6/7; }
 
 /* ─── CARD BASE ─── */
 .card {
@@ -109,6 +110,7 @@ body.hov #ring { width:52px;height:52px;border-color:var(--gold); }
 .bg-avail  { background:var(--s2); }
 .bg-stat   { background:linear-gradient(145deg,#140e02,#0a0800); }
 .bg-creds  { background:var(--s2); }
+.bg-pet    { background:radial-gradient(ellipse 65% 55% at 50% 25%,#0a2a30 0%,transparent 55%),linear-gradient(145deg,#040c0e 0%,#081a1e 55%,#040c0e 100%); }
 
 /* card typography */
 .ctag   { font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:11px;display:block; }
@@ -137,11 +139,12 @@ body.hov #ring { width:52px;height:52px;border-color:var(--gold); }
   .b-raqam,.b-bnpl,.b-ent{grid-column:1/7;grid-row:auto;min-height:360px}
   .b-about,.b-avail,.b-stat,.b-crypto,.b-ai,.b-wa,.b-creds{grid-column:span 3;grid-row:auto;min-height:280px}
   .b-ds{grid-column:1/7;grid-row:auto;min-height:160px}
+  .b-pet{grid-column:1/7;grid-row:auto;min-height:240px}
 }
 @media(max-width:768px){
   :root{--pad:20px}
   .bento{grid-template-columns:1fr}
   .b-raqam,.b-bnpl,.b-ent{min-height:300px}
   .b-about,.b-avail,.b-stat,.b-crypto,.b-ai,.b-wa,.b-creds{grid-column:span 1;min-height:250px}
-  .b-ds{min-height:150px}
+  .b-ds,.b-pet{min-height:150px}
 }

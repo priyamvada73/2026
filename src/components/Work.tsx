@@ -216,6 +216,29 @@ export default function Work() {
             </div>
           </div>
         </article>
+
+        {/* 08 PET PROTECT */}
+        <article className="card b-pet bg-pet rv d1" style={{cursor:'none'}} onClick={()=>navigate('/case-study/pet-protect')}>
+          <div className="cl" style={{background:'#5BB9C4'}} /><div className="cn">08</div>
+          <button onClick={e=>{e.stopPropagation();navigate('/case-study/pet-protect')}} className="ca" aria-label="Pet Protect case study" style={{zIndex:2,border:'none',background:'transparent',cursor:'none'}}>↗</button>
+          <div style={{ position:'absolute',inset:0,padding:'28px 36px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:40 }}>
+            <div style={{zIndex:1,pointerEvents:'none'}}>
+              <span className="ctag" style={{color:'#5BB9C4'}}>Design System · Pet Insurance · Oslo</span>
+              <h2 className="ctitle" style={{ marginBottom:8,fontSize:'clamp(1.1rem,1.4vw,1.6rem)' }}>
+                Pet Protect — Design System for Oslo Pet Insurance
+              </h2>
+              <p className="cdesc">Token-first design system with 35+ components, dual-mode theming, 7-level shadow library, and a full type scale — from Figma Variables to shipped product.</p>
+            </div>
+            <div style={{ display:'flex',gap:32,flexShrink:0,alignItems:'center' }}>
+              {[['35+','components'],['2','theme modes'],['60+','tokens']].map(([b,l])=>(
+                <div key={l} style={{ fontSize:'.72rem',color:'var(--muted)' }}>
+                  <b style={{ fontSize:'1.3rem',fontFamily:'"Cormorant Garamond",Georgia,serif',fontWeight:300,color:'#5BB9C4',display:'block',lineHeight:1,marginBottom:3 }}>{b}</b>
+                  {l}
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   )
