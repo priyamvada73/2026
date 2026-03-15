@@ -667,6 +667,51 @@ export default function CaseStudyAICallCenter() {
           </div>
         </section>
 
+        {/* ── AI SUMMARY & CALL TRANSCRIPTION ── */}
+        <section style={{ maxWidth: 1100, margin: '0 auto', padding: '100px var(--pad) 0', borderTop: '1px solid var(--bdr2)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'start' }}>
+            {/* Left — content */}
+            <div>
+              <h2 style={{ fontFamily: '"Cormorant Garamond",Georgia,serif', fontSize: 'clamp(1.5rem,2.8vw,2.4rem)', fontWeight: 300, lineHeight: 1.1, marginBottom: 16, color: 'var(--white)' }}>
+                AI-Generated Call<br />Summary
+              </h2>
+              <p style={{ fontSize: '.88rem', lineHeight: 1.8, color: 'var(--muted)', marginBottom: 32 }}>
+                Every call is automatically transcribed and summarized by AI in both English and Arabic. The system generates intelligent call summaries with key topics, action items, and sentiment — enabling managers across the MENA region to review conversations instantly without replaying audio, regardless of the language spoken.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
+                {[
+                  ['Bilingual AI Transcription', 'Real-time speech-to-text in English and Arabic with 95%+ accuracy, automatic language detection, and speaker diarization for every call.'],
+                  ['AI-Generated Summary', 'One-click summaries in both languages extract key topics, action items, and customer sentiment — eliminating manual note-taking across multilingual teams.'],
+                  ['Language Toggle', 'Seamless switching between English and Arabic transcripts with synchronized timestamps, allowing supervisors to review calls in their preferred language.'],
+                  ['Inline Audio Player', 'Waveform visualization with playback controls, 5-second skip, and speed adjustment synced to the transcript in the selected language.'],
+                ].map(([title, desc]) => (
+                  <div key={title} style={{ borderLeft: '2px solid var(--gold)', paddingLeft: 16 }}>
+                    <div style={{ fontSize: '.82rem', fontWeight: 500, color: 'var(--white)', marginBottom: 4 }}>{title}</div>
+                    <p style={{ fontSize: '.76rem', lineHeight: 1.65, color: 'var(--muted)' }}>{desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ background: 'var(--s2)', border: '1px solid var(--bdr2)', borderRadius: 12, padding: '20px 24px' }}>
+                <div style={{ fontSize: '.6rem', fontWeight: 500, letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>Key Decision</div>
+                <p style={{ fontSize: '.82rem', lineHeight: 1.7, color: 'var(--muted)' }}>
+                  Supporting English and Arabic was critical for MENA market adoption. We prioritized bilingual AI summaries so that supervisors could review any call in their preferred language — reducing the barrier to insight and enabling cross-language quality monitoring at scale.
+                </p>
+              </div>
+            </div>
+
+            {/* Right — screen image */}
+            <div style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid var(--bdr2)', boxShadow: '0 25px 60px rgba(0,0,0,.5)' }}>
+              <img
+                src={`${import.meta.env.BASE_URL}images/ai-call-summary.png`}
+                alt="AI-generated call summary with transcription in English and Arabic"
+                style={{ width: '100%', display: 'block' }}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* ── RESULTS & IMPACT ── */}
         <section style={{ maxWidth: 1100, margin: '0 auto', padding: '100px var(--pad) 0', borderTop: '1px solid var(--bdr2)', textAlign: 'center' }}>
           <h2 style={{ fontFamily: '"Cormorant Garamond",Georgia,serif', fontSize: 'clamp(1.5rem,2.8vw,2.4rem)', fontWeight: 300, lineHeight: 1.1, marginBottom: 40, color: 'var(--white)' }}>
