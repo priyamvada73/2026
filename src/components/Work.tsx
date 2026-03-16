@@ -156,16 +156,16 @@ export default function Work() {
           </div>
         </article>
 
-        {/* 06 WHATSAPP */}
-        <article className="card b-wa bg-wa rv d3" style={{opacity:matches('wa',filter)?1:.15,transition:'opacity .35s ease'}}>
+        {/* 06 OMNICHANNEL */}
+        <article className="card b-wa bg-wa rv d3" style={{cursor:'none',opacity:matches('wa',filter)?1:.15,transition:'opacity .35s ease'}} onClick={()=>navigate('/case-study/omnichannel')}>
           <div className="cl" /><div className="cn">06</div>
-          <a href="#" className="ca">↗</a>
-          <div className="ci">
-            <span className="ctag">Conversational AI · Mobile</span>
-            <h2 className="ctitle">WhatsApp Business Banking<br />for the MENA Market</h2>
+          <button onClick={e=>{e.stopPropagation();navigate('/case-study/omnichannel')}} className="ca" aria-label="Omnichannel case study" style={{zIndex:2,border:'none',background:'transparent',cursor:'none'}}>↗</button>
+          <div className="ci" style={{zIndex:1,pointerEvents:'none'}}>
+            <span className="ctag">Conversational AI · Mobile · B2B</span>
+            <h2 className="ctitle">Omnichannel Platform —<br />WhatsApp &amp; Voice, Unified</h2>
             <div className="cms">
-              <div className="cm"><b>MENA</b>first design</div>
-              <div className="cm"><b>Conversational</b>UX</div>
+              <div className="cm"><b>60%</b>faster responses</div>
+              <div className="cm"><b>70%</b>template savings</div>
             </div>
           </div>
         </article>

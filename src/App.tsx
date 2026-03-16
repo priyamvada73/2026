@@ -4,6 +4,7 @@ import CaseStudyRaqam from './pages/CaseStudyRaqam'
 import CaseStudyPetProtect from './pages/CaseStudyPetProtect'
 import CaseStudyDesignSystem from './pages/CaseStudyDesignSystem'
 import CaseStudyAICallCenter from './pages/CaseStudyAICallCenter'
+import CaseStudyOmnichannel from './pages/CaseStudyOmnichannel'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/case-study/pet-protect" element={<CaseStudyPetProtect />} />
         <Route path="/case-study/design-system" element={<CaseStudyDesignSystem />} />
         <Route path="/case-study/ai-call-center" element={<CaseStudyAICallCenter />} />
+        <Route path="/case-study/omnichannel" element={<CaseStudyOmnichannel />} />
       </Routes>
     </BrowserRouter>
   )
