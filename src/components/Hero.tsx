@@ -14,11 +14,11 @@ export default function Hero() {
         textAlign:'center',
       }}
     >
-      {/* grid texture */}
+      {/* checks texture */}
       <div aria-hidden="true" style={{
         position:'absolute',inset:0,pointerEvents:'none',
-        backgroundImage:'linear-gradient(rgba(201,168,76,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.025) 1px,transparent 1px)',
-        backgroundSize:'72px 72px',
+        backgroundImage:'linear-gradient(rgba(201,168,76,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.06) 1px,transparent 1px)',
+        backgroundSize:'48px 48px',
         maskImage:'radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 100%)',
         WebkitMaskImage:'radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 100%)',
       }} />

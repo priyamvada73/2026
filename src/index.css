@@ -21,6 +21,23 @@
     --bdr2:   rgba(240,237,230,.07);
     --gap:    10px;
     --pad:    56px;
+    --nav-bg: linear-gradient(180deg,rgba(8,8,15,.97) 0%,transparent 100%);
+  }
+
+  /* ─── LIGHT MODE ─── */
+  [data-theme="light"] {
+    --black:  #FAF7F2;
+    --s1:     #F3EDE3;
+    --s2:     #EDE6DA;
+    --s3:     #E5DDD0;
+    --gold:   #B8902E;
+    --gold2:  #9A7820;
+    --white:  #1C1C2E;
+    --muted:  rgba(28,28,46,.55);
+    --dim:    rgba(28,28,46,.15);
+    --border: rgba(184,144,46,.28);
+    --bdr2:   rgba(28,28,46,.1);
+    --nav-bg: linear-gradient(180deg,rgba(250,247,242,.97) 0%,transparent 100%);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,6 +50,7 @@
     overflow-x: hidden;
     cursor: none;
     -webkit-font-smoothing: antialiased;
+    transition: background .3s, color .3s;
   }
   ::selection { background: rgba(201,168,76,.25); color: var(--white); }
 }
@@ -118,6 +136,22 @@ body.hov #ring { width:52px;height:52px;border-color:var(--gold); }
 .bg-creds  { background:var(--s2); }
 .bg-pet    { background:radial-gradient(ellipse 65% 55% at 50% 25%,#0a2a30 0%,transparent 55%),linear-gradient(145deg,#040c0e 0%,#081a1e 55%,#040c0e 100%); }
 .bg-oslo   { background:radial-gradient(ellipse 55% 65% at 80% 30%,#0a2a30 0%,transparent 55%),linear-gradient(135deg,#030c0e 0%,#061518 55%,#030c0e 100%); }
+
+/* ─── LIGHT MODE card overrides ─── */
+[data-theme="light"] .bg-raqam,
+[data-theme="light"] .bg-bnpl,
+[data-theme="light"] .bg-crypto,
+[data-theme="light"] .bg-ai,
+[data-theme="light"] .bg-wa,
+[data-theme="light"] .bg-ent,
+[data-theme="light"] .bg-aicall,
+[data-theme="light"] .bg-ds,
+[data-theme="light"] .bg-pet,
+[data-theme="light"] .bg-oslo   { background:var(--s1); }
+[data-theme="light"] .bg-stat   { background:var(--s2); }
+[data-theme="light"] .card { border-color:var(--bdr2); transition:transform .45s cubic-bezier(.22,.68,0,1.2),box-shadow .45s,border-color .3s,background .3s; }
+[data-theme="light"] .card:hover { box-shadow:0 8px 24px rgba(0,0,0,.1); }
+[data-theme="light"] .ctitle { font-weight:600; }
 
 /* card typography */
 .ctag   { font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:11px;display:block; }

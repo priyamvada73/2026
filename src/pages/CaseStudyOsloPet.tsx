@@ -335,10 +335,10 @@ export default function CaseStudyOsloPet() {
         </section>
 
         {/* ── CLAIMS ── */}
+        {/* ── 06 CLAIMS ── */}
         <section style={{ padding: '80px var(--pad)', background: 'var(--s1)', borderBottom: '1px solid var(--bdr2)' }}>
           <div style={{ ...s.wrap }}>
-            <div className="rv" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'start' }}>
-              {/* 06 — Claims */}
+            <div className="rv" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
               <div>
                 <div style={{ ...s.label, marginBottom: 14 }}>06 — Claims</div>
                 <h2 style={{ ...s.h2, marginBottom: 20 }}>
@@ -353,23 +353,27 @@ export default function CaseStudyOsloPet() {
                     <span style={{ fontSize: '.78rem', color: 'var(--muted)', lineHeight: 1.6 }}>{p}</span>
                   </div>
                 ))}
-                <div style={{ marginTop: 32 }}>
-                  <ClaimsScreen />
-                </div>
               </div>
+              <ClaimsScreen />
+            </div>
+          </div>
+        </section>
 
-              {/* 07 — Mobile Experience */}
-              <div>
-                <div style={{ ...s.label, marginBottom: 14 }}>07 — Mobile Experience</div>
-                <h2 style={{ ...s.h2, marginBottom: 20 }}>
-                  Designed for<br /><em style={{ fontStyle: 'italic', color: TEAL }}>every screen</em>
-                </h2>
-                <img
-                  src={`${import.meta.env.BASE_URL}images/oslo-mobile-screens.png`}
-                  alt="Pet Cloud mobile screens"
-                  style={{ display: 'block', width: '100%', marginTop: 32 }}
-                />
-              </div>
+        {/* ── 07 MOBILE EXPERIENCE ── */}
+        <section style={{ padding: '80px var(--pad)', borderBottom: '1px solid var(--bdr2)' }}>
+          <div style={{ ...s.wrap }}>
+            <div className="rv" style={{ textAlign: 'center', marginBottom: 48 }}>
+              <div style={{ ...s.label, marginBottom: 14 }}>07 — Mobile Experience</div>
+              <h2 style={{ ...s.h2 }}>
+                Designed for<br /><em style={{ fontStyle: 'italic', color: TEAL }}>every screen</em>
+              </h2>
+            </div>
+            <div className="rv d2">
+              <img
+                src={`${import.meta.env.BASE_URL}images/oslo-mobile-screens.png`}
+                alt="Pet Cloud mobile screens"
+                style={{ display: 'block', width: '100%' }}
+              />
             </div>
           </div>
         </section>
