@@ -142,24 +142,16 @@ export default function Work() {
 
         {/* ── DESIGN SYSTEM STRIPS ── */}
 
-        {/* 05 DESIGN SYSTEM strip */}
+        {/* 05 DESIGN SYSTEM */}
         <article className="card b-ds bg-ds rv d1" style={{cursor:'none',opacity:matches('ds',filter)?1:.15,transition:'opacity .35s ease'}} onClick={()=>navigate('/case-study/design-system')}>
           <div className="cl" /><div className="cn">05</div>
           <button onClick={e=>{e.stopPropagation();navigate('/case-study/design-system')}} className="ca" aria-label="Design System case study" style={{zIndex:2,border:'none',background:'transparent',cursor:'none'}}>↗</button>
-          <div style={{ position:'absolute',inset:0,padding:'28px 36px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:40 }}>
-            <div>
-              <span className="ctag">Design Systems · B2B Finance</span>
-              <h2 className="ctitle" style={{ marginBottom:0,fontSize:'clamp(1.1rem,1.4vw,1.6rem)' }}>
-                Core Design System — 150+ Components, Built from Scratch
-              </h2>
-            </div>
-            <div style={{ display:'flex',gap:32,flexShrink:0,alignItems:'center' }}>
-              {[['150+','components'],['50%','dev efficiency'],['Figma','+ tokens']].map(([b,l])=>(
-                <div key={l} style={{ fontSize:'.72rem',color:'var(--muted)' }}>
-                  <b style={{ fontSize:'1.3rem',fontFamily:'"Cormorant Garamond",Georgia,serif',fontWeight:300,color:'var(--gold)',display:'block',lineHeight:1,marginBottom:3 }}>{b}</b>
-                  {l}
-                </div>
-              ))}
+          <div className="ci" style={{zIndex:1,pointerEvents:'none'}}>
+            <span className="ctag">Design Systems · B2B Finance</span>
+            <h2 className="ctitle">Core Design System — 150+ Components</h2>
+            <div className="cms">
+              <div className="cm"><b>150+</b>components</div>
+              <div className="cm"><b>50%</b>dev efficiency</div>
             </div>
           </div>
         </article>
@@ -221,7 +213,7 @@ export default function Work() {
             <div style={{ fontFamily:'"Cormorant Garamond",Georgia,serif',fontSize:'1.4rem',fontWeight:300,color:'var(--white)',lineHeight:1.2 }}>
               Open to Lead &amp;<br />Senior Designer roles
             </div>
-            <p style={{ fontSize:'.73rem',color:'var(--muted)',lineHeight:1.6 }}>UAE-based · AED 32–38K · Fintech, banking, enterprise B2B.</p>
+            <p style={{ fontSize:'.73rem',color:'var(--muted)',lineHeight:1.6 }}>UAE-based · Fintech, banking, enterprise B2B.</p>
             <a href="mailto:priyamvada.s.m@gmail.com" style={{ fontSize:'.66rem',fontWeight:500,letterSpacing:'.12em',textTransform:'uppercase',color:'var(--gold)',textDecoration:'none',borderBottom:'1px solid rgba(201,168,76,.3)',paddingBottom:2,width:'fit-content',cursor:'none' }}>
               Get in touch →
             </a>
@@ -230,18 +222,21 @@ export default function Work() {
 
         {/* CREDENTIALS */}
         <article className="card b-creds bg-creds rv d2">
-          <div style={{ position:'absolute',inset:0,padding:28,display:'flex',flexDirection:'column',justifyContent:'flex-end',gap:14 }}>
+          <div style={{ position:'absolute',inset:0,padding:28,display:'flex',flexDirection:'column',justifyContent:'flex-end',gap:14,overflowY:'auto' }}>
             <div style={{ fontSize:'.6rem',fontWeight:500,letterSpacing:'.22em',textTransform:'uppercase',color:'var(--gold)' }}>Credentials</div>
-            <div style={{ display:'flex',flexDirection:'column',gap:9 }}>
+            <div style={{ display:'flex',flexDirection:'column',gap:13 }}>
               {[
-                ['NN/g Certified','Nielsen Norman Group UX'],
-                ['CUA','Certified Usability Analyst'],
-                ['13 Years','Lead Product Designer'],
-                ['UAE-based','MENA market expertise'],
-              ].map(([b,t])=>(
-                <div key={b} style={{ display:'flex',alignItems:'center',gap:10 }}>
-                  <div style={{ width:4,height:4,borderRadius:'50%',background:'var(--gold)',flexShrink:0 }} />
-                  <div style={{ fontSize:'.74rem',color:'var(--muted)' }}><b style={{ color:'var(--white)',fontWeight:500 }}>{b}</b> — {t}</div>
+                { icon:'🏅', title:'NN/g — UX Certification', sub:'Nielsen Norman Group · UX research, interaction design & best practices' },
+                { icon:'🏅', title:'HFI — Certified Usability Analyst (CUA)', sub:'Human Factors International · Usability engineering & human-centered design' },
+                { icon:'🎓', title:'B.Com, Distinction', sub:'Savitribai Phule Pune University · Business, finance & org. management' },
+                { icon:'📊', title:'ICWA (Inter)', sub:'Institute of Cost Accountants of India · Financial analysis & strategic insights' },
+              ].map(({ icon, title, sub }) => (
+                <div key={title} style={{ display:'flex',gap:10,alignItems:'flex-start' }}>
+                  <span style={{ fontSize:'.85rem',flexShrink:0,marginTop:1 }}>{icon}</span>
+                  <div>
+                    <div style={{ fontSize:'.74rem',fontWeight:500,color:'var(--white)',marginBottom:2 }}>{title}</div>
+                    <div style={{ fontSize:'.68rem',color:'var(--muted)',lineHeight:1.5 }}>{sub}</div>
+                  </div>
                 </div>
               ))}
             </div>
