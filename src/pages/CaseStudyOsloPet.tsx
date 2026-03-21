@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+
 import Cursor from '../components/Cursor'
 
 /* ─── COLOUR TOKENS ───────────────────────────────────── */
@@ -92,7 +92,7 @@ function useReveal() {
 /* ─── PAGE ─────────────────────────────────────────────── */
 export default function CaseStudyOsloPet() {
   const sectionRef = useReveal() as React.RefObject<HTMLElement>
-  const navigate = useNavigate()
+
 
   const s: Record<string, React.CSSProperties> = {
     page:  { background: 'var(--black)', color: 'var(--white)', fontFamily: 'Outfit, sans-serif', fontWeight: 300, minHeight: '100vh' },
