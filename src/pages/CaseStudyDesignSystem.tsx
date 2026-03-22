@@ -387,22 +387,25 @@ export default function CaseStudyDesignSystem() {
         </section>
 
         {/* ── TAB BAR ── */}
-        <div style={{ display: 'flex', borderBottom: '1px solid var(--bdr2)', position: 'sticky', top: 0, zIndex: 50, background: 'var(--black)' }}>
-          {(['theme', 'components'] as const).map(t => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              style={{
-                flex: 1, padding: '18px 0', cursor: 'none',
-                background: 'none', border: 'none', borderBottom: tab === t ? '2px solid var(--gold)' : '2px solid transparent',
-                fontSize: '.68rem', fontWeight: 600, letterSpacing: '.18em', textTransform: 'uppercase',
-                color: tab === t ? 'var(--gold)' : 'var(--muted)',
-                transition: 'color .25s, border-color .25s',
-              }}
-            >
-              {t === 'theme' ? 'Theme' : 'Components'}
-            </button>
-          ))}
+        <div style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--black)', borderBottom: '1px solid var(--bdr2)', display: 'flex', justifyContent: 'center', padding: '20px 0' }}>
+          <div style={{ display: 'inline-flex', gap: 8, background: 'var(--s2)', border: '1px solid var(--bdr2)', borderRadius: 40, padding: '5px' }}>
+            {(['theme', 'components'] as const).map(t => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                style={{
+                  padding: '10px 32px', cursor: 'none', borderRadius: 40,
+                  background: tab === t ? 'var(--gold)' : 'transparent',
+                  border: 'none',
+                  fontSize: '.72rem', fontWeight: 600, letterSpacing: '.16em', textTransform: 'uppercase',
+                  color: tab === t ? 'var(--black)' : 'var(--muted)',
+                  transition: 'background .25s, color .25s',
+                }}
+              >
+                {t === 'theme' ? 'Theme' : 'Components'}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ── THEME TAB ── */}
