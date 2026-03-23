@@ -60,6 +60,36 @@ export default function Contact() {
       {/* contact cards grid */}
       <div className="rv d2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, maxWidth: 1100, margin: '0 auto 16px' }}>
         {CARDS.map(({ label, icon, value, sub, href }) => {
+          if (label === 'Phone') {
+            return (
+              <div key="phone" style={{ background: 'var(--s1)', border: '1px solid var(--bdr2)', borderRadius: 14, padding: '28px 28px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 20 }}>
+                  <div style={{ width: 56, height: 56, borderRadius: 12, flexShrink: 0, background: 'var(--s2)', border: '1px solid var(--bdr2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.6rem' }}>📞</div>
+                  <div style={{ fontSize: '.65rem', fontWeight: 500, letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--muted)' }}>Phone</div>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <a href="tel:+971528926463" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', cursor: 'none', padding: '10px 14px', borderRadius: 10, border: '1px solid var(--bdr2)', background: 'var(--s2)', transition: 'border-color .2s' }}
+                    onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+                    onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bdr2)')}>
+                    <span style={{ fontSize: '1.4rem', lineHeight: 1 }}>🇦🇪</span>
+                    <div>
+                      <div style={{ fontSize: '.58rem', fontWeight: 500, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 2 }}>UAE</div>
+                      <div style={{ fontSize: '.95rem', fontWeight: 500, color: 'var(--white)' }}>+971 52 892 6463</div>
+                    </div>
+                  </a>
+                  <a href="tel:+918828340260" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', cursor: 'none', padding: '10px 14px', borderRadius: 10, border: '1px solid var(--bdr2)', background: 'var(--s2)', transition: 'border-color .2s' }}
+                    onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+                    onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bdr2)')}>
+                    <span style={{ fontSize: '1.4rem', lineHeight: 1 }}>🇮🇳</span>
+                    <div>
+                      <div style={{ fontSize: '.58rem', fontWeight: 500, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 2 }}>India</div>
+                      <div style={{ fontSize: '.95rem', fontWeight: 500, color: 'var(--white)' }}>+91 88283 40260</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            )
+          }
           const inner = (
             <>
               <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 16 }}>

@@ -5,7 +5,7 @@ export default function Footer() {
         PRIYAMVADA <span style={{ color:'var(--gold)' }}>·</span> UX
       </span>
       <span style={{ fontSize:'.68rem',color:'var(--muted)',letterSpacing:'.05em' }}>
-        © 2026 Priyamvada Khanolkar — Financial UX Design Portfolio
+        © 2026 Priyamvada Khanolkar — UX Design Portfolio
       </span>
       <div style={{ display:'flex',gap:26 }}>
         {[['https://www.linkedin.com/in/sarvopriya/','LinkedIn'],['mailto:priyamvada.s.m@gmail.com','Email'],['tel:+971528926463','+971 52 892 6463']].map(([href,label])=>(
